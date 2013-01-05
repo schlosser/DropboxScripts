@@ -1,7 +1,7 @@
 """
 File -- Organize_Photos.py
 Creator -- Dan Schlosser
-Date -- 1/5/12
+Date -- 1/5/13
 Description -- Copies all .jpg files to folders with 'YYYY-MM' labels.
 
 """
