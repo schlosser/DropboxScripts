@@ -14,10 +14,10 @@ def main():
     """Copies all .jpg files to folders with 'YYYY-MM' labels.
     
     """
-    fileTypes = ['.jpg', '.jpeg', '.gif', '.png', '.mp4', '.avi', 
-                          '.ppm', '.mov', '.bmp', '.tiff']
+    supportedFileTypes = ['jpg', 'jpeg', 'gif', 'png', 'mp4', 'avi', 
+                          'ppm', 'mov', 'bmp', 'tiff']
     for fn in os.listdir(os.getcwd()): #filename
-        if not os.path.isdir(fn) and fileTypeIsSupported(fn, fileTypes):
+        if not os.path.isdir(fn) and fn.rsplit('.',1)[1] in supportedFileTypes:
             try:
                 timeStamp = getEXIF(fn, '')['Exif.Image.DateTime']
             except:
@@ -30,24 +30,6 @@ def main():
                 
             target_dir = os.path.join(target_folder, os.path.basename(fn))
             os.rename(os.path.join(os.getcwd(),fn), target_dir) # move file
-                
-def fileTypeIsSupported(fn, fileTypes):
-    """Returns whether or not the filename is of any of the file types in 
-    fileTypes.
-    
-    Arguments: 
-    fn -- File name to check against types
-    fileTypes -- A list of fileTypes to check against fn
-    
-    Return:
-    True if a match, else False
-    
-    """
-    for fileType in fileTypes:
-        if fn.endswith(fileType):
-            return True
-    return False
-    
             
 def dateToString(date):
     """Converts the given date to a string of form 'YYYY-MM'.
