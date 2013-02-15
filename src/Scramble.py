@@ -13,7 +13,10 @@ def main():
     """Copies all .jpg files to folders with 'YYYY-MM' labels.
     
     """
-    choice = input('Enter value (1 or 2):')
+
+    print '1. Scramble\n2. Unscramble'
+    
+    choice = input('Enter value:')
     
     if choice == 1:
         package(os.getcwd())
