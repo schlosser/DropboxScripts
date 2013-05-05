@@ -1,7 +1,7 @@
 Dropbox Scripts
 ===============
 
-Scripts that seek to simply Dropbox user experience, with a focus on photo organization for 
+Scripts that seek to simpilfy the Dropbox user experience, with a focus on photo organization for 
 use with [Dropbox Camera Upload][1].
 
 I use these scripts in conjunction with my [Food Journal WordPress Post Generator][2].
